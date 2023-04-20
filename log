@@ -854,3 +854,14 @@ Thu 20 Apr 2023 08:55:57 PM UTC:
  tests:  23|2
 total_score: 50/70
 5d7c575
+Thu 20 Apr 2023 09:00:39 PM UTC: 
+ treemap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:188:41: error: ‘auxiliar’ undeclared (first use in this function)
+  188 |       if( (tree->current->pair->key) > (auxiliar->pair->key) )
+      |                                         ^~~~~~~~
+treemap.c:188:41: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+f21455d
