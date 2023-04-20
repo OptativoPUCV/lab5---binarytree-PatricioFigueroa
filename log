@@ -956,3 +956,9 @@ treemap.c:177:13: note: previous definition of ‘auxiliar’ with type ‘TreeN
       |             ^~~~~~~~
 Compilation failed
 56bd71c
+Thu 20 Apr 2023 09:09:15 PM UTC: 
+ treemap.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  23|2
+total_score: 50/70
+4497c60
