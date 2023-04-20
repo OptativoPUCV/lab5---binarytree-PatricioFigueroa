@@ -658,3 +658,9 @@ test.c:607: error: control reaches end of non-void function [-Werror=return-type
 cc1: all warnings being treated as errors
 Compilation failed
 9c6d007
+Thu 20 Apr 2023 09:07:35 PM UTC: 
+ treemap.c | 38 ++++++++++++++++++++------------------
+ 1 file changed, 20 insertions(+), 18 deletions(-)
+ tests:  23|2
+total_score: 50/70
+5dbbd2a
