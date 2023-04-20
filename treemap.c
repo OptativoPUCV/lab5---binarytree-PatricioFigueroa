@@ -181,6 +181,9 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  
+  if(tree->current->right != NULL)
+  {
+    return minimun(tree->current->right)
+  }
   return NULL;
 }
