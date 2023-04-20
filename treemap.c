@@ -93,7 +93,10 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     node->right->parent = node->parent;
     return;
   }
-  
+  TreeNode *auxiliar = minimum(node->right);
+  node->pair->key = auxiliar->pair->key;
+  node->pair->value = auxiliar->pair->value;
+  removeNode(tree, auxiliar);
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
