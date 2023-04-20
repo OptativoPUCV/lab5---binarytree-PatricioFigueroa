@@ -80,34 +80,61 @@ TreeNode * minimum(TreeNode * x){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
-  if(node == tree->root) tree= NULL;
-  if(node->left == NULL)
-  {
-    if(node->right == NULL)
-    {
-      if(node->parent->right == node)
-        node->parent->right = NULL;
-      else node->parent->left = NULL;
+  if (node == NULL) {
+    return;
+  }
+
+  if (node == tree->root) {
+    tree->root = NULL;
+    free(node->pair);
+    free(node);
+    return;
+  }
+
+  TreeNode *parent = node->parent;
+
+  if (node->left == NULL) {
+    if (node->right == NULL) {
+      if (parent->left == node) {
+        parent->left = NULL;
+      } else {
+        parent->right = NULL;
+      }
+      free(node->pair);
+      free(node);
+      return;
+    } else {
+      if (parent->left == node) {
+        parent->left = node->right;
+      } else {
+        parent->right = node->right;
+      }
+      node->right->parent = parent;
+      free(node->pair);
+      free(node);
       return;
     }
-    node->right->parent = node->parent;
-    node->parent->right = node->right;
+  } else if (node->right == NULL) {
+    if (parent->left == node) {
+      parent->left = node->left;
+    } else {
+      parent->right = node->left;
+    }
+    node->left->parent = parent;
+    free(node->pair);
+    free(node);
+    return;
+  } else {
+    TreeNode *min_node = node->right;
+    while (min_node->left != NULL) {
+      min_node = min_node->left;
+    }
+    node->pair->key = min_node->pair->key;
+    node->pair->value = min_node->pair->value;
+    removeNode(tree, min_node);
     return;
   }
-  if(node->right == NULL)
-  {
-    node->left->parent = node->parent;
-    node->parent->left = node->left;
-    return;
-  }
-  TreeNode *auxiliar = minimum(node->right);
-  node->pair->key = auxiliar->pair->key;
-  node->pair->value = auxiliar->pair->value;
-  removeNode(tree, auxiliar);
-  free(auxiliar);
-  free(node);
 }
-
 void eraseTreeMap(TreeMap * tree, void* key){
     if (tree == NULL || tree->root == NULL) return;
 
