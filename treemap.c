@@ -89,14 +89,14 @@ void removeNode(TreeMap * tree, TreeNode* node) {
       else node->parent->left = NULL;
       return;
     }
-    node->parent->right = node->right;
     node->right->parent = node->parent;
+    node->parent->right = node->right;
     return;
   }
   if(node->right == NULL)
   {
-    node->parent->left = node->left;
     node->left->parent = node->parent;
+    node->parent->left = node->left;
     return;
   }
   TreeNode *auxiliar = minimum(node->right);
