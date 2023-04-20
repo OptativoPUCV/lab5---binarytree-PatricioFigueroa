@@ -182,7 +182,10 @@ Pair * nextTreeMap(TreeMap * tree) {
   while(aux->parent != NULL && aux->pair->key <= keyAux)
     aux = aux->parent;
   if( aux->pair->key > keyAux)
+  {
+    tree->current = aux;
     return aux->pair;
+  }
   return NULL;
 }
 
