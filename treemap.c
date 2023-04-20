@@ -172,12 +172,17 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  //TreeNode aux = tree->current->parent;
+  TreeNode *aux = tree->current;
+  void* keyAux = aux->pair->key;
   if(tree->current->right != NULL)
   {
     tree->current = minimum(tree->current->right);
     return tree->current->pair;
   }
+  while(aux->parent != NULL && aux->pair->key > keyAux)
+    aux = aux->parent;
+  if( aux->pair->key > keyAux)
+    return aux->pair;
   return NULL;
 }
 
