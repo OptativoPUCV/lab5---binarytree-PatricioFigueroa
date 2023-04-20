@@ -105,6 +105,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
   node->pair->value = auxiliar->pair->value;
   removeNode(tree, auxiliar);
   free(auxiliar);
+  free(node);
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
