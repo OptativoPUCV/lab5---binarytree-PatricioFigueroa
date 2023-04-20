@@ -190,7 +190,6 @@ Pair * nextTreeMap(TreeMap * tree) {
       }
       tree->current = tree->current->parent;
     }
-  if(tree->root->pair->key > auxiliar->pair->key)
-    return tree->root->pair;
-  return NULL;
+  
+    return NULL;
 }
