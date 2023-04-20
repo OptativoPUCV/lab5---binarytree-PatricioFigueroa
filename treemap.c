@@ -160,7 +160,6 @@ Pair * upperBound(TreeMap * tree, void* key) {
       if(tree->lower_than(key,tree->current->pair->key))
       {
         aux = tree->current;
-        printf("%d\n", tree->lower_than(key,aux->pair->key));
         tree->current = tree->current->left;
       }
       else tree->current = tree->current->right; 
