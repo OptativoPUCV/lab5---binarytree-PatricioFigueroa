@@ -182,8 +182,12 @@ Pair * nextTreeMap(TreeMap * tree) {
   }
   while(tree->current->parent != NULL)
     {
-      if(tree->current->parent->pair->key > auxiliar->pair->key)
-        return tree->current->parent->pair;
+      if( (tree->current->parent->pair->key) > (auxiliar->pair->key) )
+        
+      {
+        tree->current = tree->current->parent;
+        return tree->current->pair;
+      }
       tree->current = tree->current->parent;
     }
   if(tree->root->pair->key > auxiliar->pair->key)
