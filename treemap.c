@@ -151,53 +151,40 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-  tree->current = tree->root;
-  TreeNode *auxiliar = tree->root;
+   tree->current = tree->root;
   while(is_equal(tree,tree->current->pair->key,key) != 1)
     {
       if(tree->current->right == NULL && tree->current->left == NULL) 
       {
-        tree->current = NULL;
+        
         break;
       }
-      if(key < minimum(tree->current)->pair->key)
-        auxiliar = minimum(tree->current->pair->key);
       if(tree->lower_than(tree->current->pair->key,key))
         tree->current = tree->current->right;
-      else tree->current = tree->current->left;
+      else tree->current = tree->current->left; 
+  }
+  if(is_equal(tree,tree->current->pair->key,key) != 1)
+    return nextTreeMap(tree);
+  return tree->current->pair;
       
-    }
-    if(tree->current == NULL)
-    {
-      tree->current = auxiliar;
-      return auxiliar->pair;
-    }
-    return tree->current->pair;
-  
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
   return minimum(tree->root)->pair;
 }
+
 Pair * nextTreeMap(TreeMap * tree) {
-  if (tree->current == NULL) { // El árbol está vacío
-    return NULL;
-  }
-  
   TreeNode *auxiliar = tree->current;
-  if (tree->current->right != NULL) {
+  if(tree->current->right != NULL)
+  {
     tree->current = minimum(tree->current->right);
     return tree->current->pair;
   }
-  
-  while (tree->current->parent != NULL) {
-    if (tree->current->parent->pair->key > auxiliar->pair->key) {
-      return tree->current->parent->pair;
+  while(tree->current->parent != NULL)
+    {
+      if(tree->current->parent->pair->key > auxiliar->pair->key)
+        return tree->current->parent->pair;
+      tree->current = tree->current->parent;
     }
-    tree->current = tree->current->parent;
-  }
-  
-  // Se llegó al final del árbol sin encontrar un par mayor
-  tree->current = NULL;
   return NULL;
 }
