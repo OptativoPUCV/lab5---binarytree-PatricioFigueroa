@@ -174,8 +174,8 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  TreeNode *current_copy = malloc(sizeof(TreeNode));
-  memcpy(current_copy, tree->current, sizeof(TreeNode));
+  TreeNode *auxiliar = malloc(sizeof(TreeNode));
+  memcpy(auxiliar, tree->current, sizeof(TreeNode));
   if(tree->current->right != NULL)
   {
     tree->current = minimum(tree->current->right);

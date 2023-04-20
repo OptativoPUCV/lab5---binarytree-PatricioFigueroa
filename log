@@ -865,3 +865,9 @@ treemap.c:188:41: error: ‘auxiliar’ undeclared (first use in this function)
 treemap.c:188:41: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 f21455d
+Thu 20 Apr 2023 09:00:51 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  23|2
+total_score: 50/70
+8177f96
