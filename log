@@ -230,3 +230,30 @@ treemap.c:170:14: error: returning ‘int *’ from a function with incompatible
 cc1: all warnings being treated as errors
 Compilation failed
 54c7c7b
+Thu 20 Apr 2023 07:56:27 PM UTC: 
+ treemap.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:155:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  155 |   treeNode *auxiliar = tree->root;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:155:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  155 |   treeNode *auxiliar = tree->root;
+      |                        ^~~~
+treemap.c:163:23: error: ‘TreeNode’ has no member named ‘key’
+  163 |       if(tree->current->key > auxiliar->key)
+      |                       ^~
+treemap.c:163:39: error: request for member ‘key’ in something not a structure or union
+  163 |       if(tree->current->key > auxiliar->key)
+      |                                       ^~
+treemap.c:164:18: error: assignment to ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  164 |         auxiliar = tree->current;
+      |                  ^
+treemap.c:171:14: error: returning ‘int *’ from a function with incompatible return type ‘Pair *’ [-Werror=incompatible-pointer-types]
+  171 |       return auxiliar;
+      |              ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+85d5cf0
