@@ -528,7 +528,11 @@ treemap.c:192:53: error: request for member ‘pair’ in something not a struct
 cc1: all warnings being treated as errors
 Compilation failed
 545e5c4
+<<<<<<< HEAD
 Thu 20 Apr 2023 08:15:09 PM UTC: 
+=======
+Thu 20 Apr 2023 08:16:47 PM UTC: 
+>>>>>>> 88feaa6030c6ab222036520ade975e57b0e412e2
  treemap.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 In file included from test.c:4:
@@ -579,6 +583,7 @@ treemap.c:192:53: error: request for member ‘pair’ in something not a struct
 cc1: all warnings being treated as errors
 Compilation failed
 55e7deb
+<<<<<<< HEAD
 Thu 20 Apr 2023 08:15:23 PM UTC: 
  treemap.c | 11 +----------
  1 file changed, 1 insertion(+), 10 deletions(-)
@@ -664,3 +669,277 @@ Thu 20 Apr 2023 09:07:35 PM UTC:
  tests:  23|2
 total_score: 50/70
 5dbbd2a
+=======
+Thu 20 Apr 2023 08:16:50 PM UTC: 
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:155:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  155 |   treeNode *auxiliar = tree->root;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:155:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  155 |   treeNode *auxiliar = tree->root;
+      |                        ^~~~
+treemap.c:163:16: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  163 |       if(key < minimun(tree->current->pair->key))
+      |                ^~~~~~~
+      |                minimum
+treemap.c:163:14: error: comparison between pointer and integer [-Werror]
+  163 |       if(key < minimun(tree->current->pair->key))
+      |              ^
+treemap.c:164:18: error: assignment to ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  164 |         auxiliar = minimun(tree->current->pair->key);
+      |                  ^
+treemap.c:172:21: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+  172 |       tree->current = auxiliar;
+      |                     ^
+treemap.c:173:22: error: request for member ‘pair’ in something not a structure or union
+  173 |       return auxiliar->pair;
+      |                      ^~
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:184:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  184 |   treeNode *auxiliar = tree->current;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:184:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  184 |   treeNode *auxiliar = tree->current;
+      |                        ^~~~
+treemap.c:187:19: error: assignment to ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  187 |     tree->current = minimun(tree->current->right)
+      |                   ^
+treemap.c:187:50: error: expected ‘;’ before ‘return’
+  187 |     tree->current = minimun(tree->current->right)
+      |                                                  ^
+      |                                                  ;
+  188 |     return tree->current->pair;
+      |     ~~~~~~                                        
+treemap.c:192:53: error: request for member ‘pair’ in something not a structure or union
+  192 |       if(tree->current->parent->pair->key > auxiliar->pair->key)
+      |                                                     ^~
+cc1: all warnings being treated as errors
+Compilation failed
+71121e9
+Thu 20 Apr 2023 08:16:54 PM UTC: 
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:155:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  155 |   treeNode *auxiliar = tree->root;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:155:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  155 |   treeNode *auxiliar = tree->root;
+      |                        ^~~~
+treemap.c:163:16: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  163 |       if(key < minimun(tree->current->pair->key))
+      |                ^~~~~~~
+      |                minimum
+treemap.c:163:14: error: comparison between pointer and integer [-Werror]
+  163 |       if(key < minimun(tree->current->pair->key))
+      |              ^
+treemap.c:164:18: error: assignment to ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  164 |         auxiliar = minimun(tree->current->pair->key);
+      |                  ^
+treemap.c:172:21: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+  172 |       tree->current = auxiliar;
+      |                     ^
+treemap.c:173:22: error: request for member ‘pair’ in something not a structure or union
+  173 |       return auxiliar->pair;
+      |                      ^~
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:184:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  184 |   treeNode *auxiliar = tree->current;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:184:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  184 |   treeNode *auxiliar = tree->current;
+      |                        ^~~~
+treemap.c:187:19: error: assignment to ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  187 |     tree->current = minimun(tree->current->right)
+      |                   ^
+treemap.c:187:50: error: expected ‘;’ before ‘return’
+  187 |     tree->current = minimun(tree->current->right)
+      |                                                  ^
+      |                                                  ;
+  188 |     return tree->current->pair;
+      |     ~~~~~~                                        
+treemap.c:192:53: error: request for member ‘pair’ in something not a structure or union
+  192 |       if(tree->current->parent->pair->key > auxiliar->pair->key)
+      |                                                     ^~
+cc1: all warnings being treated as errors
+Compilation failed
+ac6f114
+Thu 20 Apr 2023 08:17:18 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:155:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  155 |   treeNode *auxiliar = tree->root;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:155:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  155 |   treeNode *auxiliar = tree->root;
+      |                        ^~~~
+treemap.c:163:16: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  163 |       if(key < minimun(tree->current->pair->key)->pair->key)
+      |                ^~~~~~~
+      |                minimum
+treemap.c:163:49: error: invalid type argument of ‘->’ (have ‘int’)
+  163 |       if(key < minimun(tree->current->pair->key)->pair->key)
+      |                                                 ^~
+treemap.c:164:18: error: assignment to ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  164 |         auxiliar = minimun(tree->current->pair->key);
+      |                  ^
+treemap.c:172:21: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+  172 |       tree->current = auxiliar;
+      |                     ^
+treemap.c:173:22: error: request for member ‘pair’ in something not a structure or union
+  173 |       return auxiliar->pair;
+      |                      ^~
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:184:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  184 |   treeNode *auxiliar = tree->current;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:184:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  184 |   treeNode *auxiliar = tree->current;
+      |                        ^~~~
+treemap.c:187:19: error: assignment to ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  187 |     tree->current = minimun(tree->current->right)
+      |                   ^
+treemap.c:187:50: error: expected ‘;’ before ‘return’
+  187 |     tree->current = minimun(tree->current->right)
+      |                                                  ^
+      |                                                  ;
+  188 |     return tree->current->pair;
+      |     ~~~~~~                                        
+treemap.c:192:53: error: request for member ‘pair’ in something not a structure or union
+  192 |       if(tree->current->parent->pair->key > auxiliar->pair->key)
+      |                                                     ^~
+cc1: all warnings being treated as errors
+Compilation failed
+4a3605f
+Thu 20 Apr 2023 08:19:05 PM UTC: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:184:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  184 |   treeNode *auxiliar = tree->current;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:184:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  184 |   treeNode *auxiliar = tree->current;
+      |                        ^~~~
+treemap.c:187:21: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  187 |     tree->current = minimun(tree->current->right)
+      |                     ^~~~~~~
+      |                     minimum
+treemap.c:187:19: error: assignment to ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  187 |     tree->current = minimun(tree->current->right)
+      |                   ^
+treemap.c:187:50: error: expected ‘;’ before ‘return’
+  187 |     tree->current = minimun(tree->current->right)
+      |                                                  ^
+      |                                                  ;
+  188 |     return tree->current->pair;
+      |     ~~~~~~                                        
+treemap.c:192:53: error: request for member ‘pair’ in something not a structure or union
+  192 |       if(tree->current->parent->pair->key > auxiliar->pair->key)
+      |                                                     ^~
+cc1: all warnings being treated as errors
+Compilation failed
+5f8f40c
+Thu 20 Apr 2023 08:19:17 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:187:21: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  187 |     tree->current = minimun(tree->current->right)
+      |                     ^~~~~~~
+      |                     minimum
+treemap.c:187:19: error: assignment to ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  187 |     tree->current = minimun(tree->current->right)
+      |                   ^
+treemap.c:187:50: error: expected ‘;’ before ‘return’
+  187 |     tree->current = minimun(tree->current->right)
+      |                                                  ^
+      |                                                  ;
+  188 |     return tree->current->pair;
+      |     ~~~~~~                                        
+cc1: all warnings being treated as errors
+Compilation failed
+c12e0c7
+Thu 20 Apr 2023 08:19:28 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:187:21: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  187 |     tree->current = minimun(tree->current->right);
+      |                     ^~~~~~~
+      |                     minimum
+treemap.c:187:19: error: assignment to ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  187 |     tree->current = minimun(tree->current->right);
+      |                   ^
+cc1: all warnings being treated as errors
+Compilation failed
+40b2745
+Thu 20 Apr 2023 08:19:38 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+bf5428f
+Thu 20 Apr 2023 08:20:11 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  23|2
+total_score: 50/70
+34b639a
+Thu 20 Apr 2023 08:25:07 PM UTC: 
+ treemap.c | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
+ tests:  23|2
+total_score: 50/70
+0e96575
+Thu 20 Apr 2023 08:36:05 PM UTC: 
+ treemap.c | 31 +++++++++----------------------
+ 1 file changed, 9 insertions(+), 22 deletions(-)
+ tests:  23|2
+total_score: 50/70
+9079452
+>>>>>>> 88feaa6030c6ab222036520ade975e57b0e412e2
+Thu 20 Apr 2023 09:08:07 PM UTC: 
+ treemap.c | Unmerged
+ treemap.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:177:1: error: version control conflict marker in file
+  177 | <<<<<<< HEAD
+      | ^~~~~~~
+treemap.c:179:10: error: ‘auxiliar’ undeclared (first use in this function)
+  179 |   memcpy(auxiliar, tree->current, sizeof(TreeNode));
+      |          ^~~~~~~~
+treemap.c:179:10: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:180:1: error: version control conflict marker in file
+  180 | =======
+      | ^~~~~~~
+treemap.c:182:1: error: version control conflict marker in file
+  182 | >>>>>>> 88feaa6030c6ab222036520ade975e57b0e412e2
+      | ^~~~~~~
+treemap.c:182:9: error: invalid suffix "feaa6030c6ab222036520ade975e57b0e412e2" on integer constant
+  182 | >>>>>>> 88feaa6030c6ab222036520ade975e57b0e412e2
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+treemap.c:195:1: error: version control conflict marker in file
+  195 | =======
+      | ^~~~~~~
+treemap.c:203:1: error: version control conflict marker in file
+  203 | >>>>>>> 88feaa6030c6ab222036520ade975e57b0e412e2
+      | ^~~~~~~
+treemap.c:203:9: error: invalid suffix "feaa6030c6ab222036520ade975e57b0e412e2" on integer constant
+  203 | >>>>>>> 88feaa6030c6ab222036520ade975e57b0e412e2
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Compilation failed
+f8a704b
