@@ -181,7 +181,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-  treeNode *auxiliar = tree->current;
+  TreeNode *auxiliar = tree->current;
   if(tree->current->right != NULL)
   {
     tree->current = minimun(tree->current->right)
