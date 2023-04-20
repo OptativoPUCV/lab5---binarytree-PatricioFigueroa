@@ -160,16 +160,18 @@ Pair * upperBound(TreeMap * tree, void* key) {
         tree->current = NULL;
         break;
       }
-      if(tree->current->key > auxiliar->key)
-        auxiliar = tree->current;
+      if(key < minimun(tree->current->pair->key))
+        auxiliar = minimun(tree->current->pair->key);
       if(tree->lower_than(tree->current->pair->key,key))
         tree->current = tree->current->right;
       else tree->current = tree->current->left;
       
     }
     if(tree->current == NULL)
+    {
+      tree->current = auxiliar;
       return auxiliar->pair;
-    
+    }
     return tree->current->pair;
   
 }
