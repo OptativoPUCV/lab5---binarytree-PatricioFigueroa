@@ -1924,3 +1924,17 @@ test.c:594:7: error: implicit declaration of function ‘ub_test4’ [-Werror=im
 cc1: all warnings being treated as errors
 Compilation failed
 b6a8a1e
+Thu 20 Apr 2023 09:18:36 PM UTC: 
+ treemap.c | 197 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 197 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘eraseTreeMap’:
+treemap.c:127:52: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+  127 |     if (tree == NULL || tree->root == NULL) return 4;
+      |                                                    ^
+treemap.c:126:6: note: declared here
+  126 | void eraseTreeMap(TreeMap * tree, void* key){
+      |      ^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+458c046
