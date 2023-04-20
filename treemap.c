@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -195,3 +196,5 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
   return NULL;
 }
+=======
+>>>>>>> ebf63b16c9b28682e81e8152a103acc77656d1a8
