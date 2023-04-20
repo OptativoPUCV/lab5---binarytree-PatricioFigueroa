@@ -630,3 +630,31 @@ treemap.c:183:53: error: request for member ‘pair’ in something not a struct
 cc1: all warnings being treated as errors
 Compilation failed
 20e6f4a
+Thu 20 Apr 2023 08:15:37 PM UTC: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:141:10: error: ‘t’ undeclared (first use in this function)
+  141 |       if(t
+      |          ^
+treemap.c:141:10: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:141:11: error: expected ‘)’ before ‘Pair’
+  141 |       if(t
+      |         ~ ^
+      |           )
+......
+  144 | Pair * upperBound(TreeMap * tree, void* key) {
+      | ~~~~       
+treemap.c:141:7: note: ‘-Wmisleading-indentation’ is disabled from this point onwards, since column-tracking was disabled due to the size of the code/headers
+  141 |       if(t
+      |       ^~
+treemap.c:141:7: note: adding ‘-flarge-source-files’ will allow for more column-tracking support, at the expense of compilation time and memory
+test.c:606:1: error: expected declaration or statement at end of input
+  606 | }
+      | ^
+test.c:606:1: error: expected declaration or statement at end of input
+test.c:607: error: control reaches end of non-void function [-Werror=return-type]
+cc1: all warnings being treated as errors
+Compilation failed
+9c6d007
