@@ -162,7 +162,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         
         tree->current = tree->current->left;
       }
-      else tree->current = tree->current->rigth; 
+      else tree->current = tree->current->right; 
   }
   if(is_equal(tree,tree->current->pair->key,key) != 1)
     return aux->pair;
