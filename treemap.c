@@ -60,7 +60,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
           tree->current->left = createTreeNode(key, value) ;
           tree->current->left->parent = tree->current;
         }
-        tree->current = NULL;
         return;
       }
       if(tree->lower_than(tree->current->pair->key,key))
