@@ -152,7 +152,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
   tree->current = tree->root;
-  treeNode *auxiliar = tree->root;
+  TreeNode *auxiliar = tree->root;
   while(is_equal(tree,tree->current->pair->key,key) != 1)
     {
       if(tree->current->right == NULL && tree->current->left == NULL) 
@@ -160,8 +160,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
         tree->current = NULL;
         break;
       }
-      if(key < minimun(tree->current->pair->key)->pair->key)
-        auxiliar = minimun(tree->current->pair->key);
+      if(key < minimum(tree->current->pair->key)->pair->key)
+        auxiliar = minimum(tree->current->pair->key);
       if(tree->lower_than(tree->current->pair->key,key))
         tree->current = tree->current->right;
       else tree->current = tree->current->left;
