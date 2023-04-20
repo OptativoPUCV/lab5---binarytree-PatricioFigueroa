@@ -176,3 +176,30 @@ treemap.c:171:14: error: returning ‘int’ from a function with return type �
 cc1: all warnings being treated as errors
 Compilation failed
 fdecc81
+Thu 20 Apr 2023 07:55:27 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:155:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  155 |   treeNode auxiliar = tree->root;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:155:23: error: initialization of ‘int’ from ‘TreeNode *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  155 |   treeNode auxiliar = tree->root;
+      |                       ^~~~
+treemap.c:166:23: error: ‘TreeNode’ has no member named ‘key’
+  166 |       if(tree->current->key > auxiliar->key)
+      |                       ^~
+treemap.c:166:39: error: invalid type argument of ‘->’ (have ‘int’)
+  166 |       if(tree->current->key > auxiliar->key)
+      |                                       ^~
+treemap.c:167:18: error: assignment to ‘int’ from ‘TreeNode *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  167 |         auxiliar = tree->current;
+      |                  ^
+treemap.c:171:14: error: returning ‘int’ from a function with return type ‘Pair *’ makes pointer from integer without a cast [-Werror=int-conversion]
+  171 |       return auxiliar;
+      |              ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+f6124f5

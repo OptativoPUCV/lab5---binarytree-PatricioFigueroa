@@ -152,7 +152,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
   tree->current = tree->root;
-  treeNode auxiliar = tree->root
+  treeNode auxiliar = tree->root;
   while(is_equal(tree,tree->current->pair->key,key) != 1)
     {
       if(tree->current->right == NULL && tree->current->left == NULL) 
