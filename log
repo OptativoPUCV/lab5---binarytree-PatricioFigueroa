@@ -4122,3 +4122,17 @@ Thu 20 Apr 2023 10:37:19 PM UTC:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 2ebd78c
+Thu 20 Apr 2023 10:37:51 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:162:23: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  162 |         printf("%d\n",(int)aux->pair->key);
+      |                       ^
+treemap.c:164:24: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  164 |         printf("%d\n", (int)aux->pair->key);
+      |                        ^
+cc1: all warnings being treated as errors
+Compilation failed
+80779e6
