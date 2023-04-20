@@ -159,9 +159,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
         break;
       if(tree->lower_than(key,tree->current->pair->key))
       {
-        printf("%d\n", aux->pair->key);
+        printf("%p\n", aux->pair->key);
         aux = tree->current;
-        printf("%d\n", aux->pair->key);
+        printf("%p\n", aux->pair->key);
         tree->current = tree->current->left;
       }
       else tree->current = tree->current->right; 
