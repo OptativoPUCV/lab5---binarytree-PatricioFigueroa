@@ -4136,3 +4136,23 @@ treemap.c:164:24: error: cast from pointer to integer of different size [-Werror
 cc1: all warnings being treated as errors
 Compilation failed
 80779e6
+Thu 20 Apr 2023 10:38:35 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:162:18: error: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘void *’ [-Werror=format=]
+  162 |         printf("%d\n", aux->pair->key);
+      |                 ~^     ~~~~~~~~~~~~~~
+      |                  |              |
+      |                  int            void *
+      |                 %p
+treemap.c:164:18: error: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘void *’ [-Werror=format=]
+  164 |         printf("%d\n", aux->pair->key);
+      |                 ~^     ~~~~~~~~~~~~~~
+      |                  |              |
+      |                  int            void *
+      |                 %p
+cc1: all warnings being treated as errors
+Compilation failed
+63cc4a3
