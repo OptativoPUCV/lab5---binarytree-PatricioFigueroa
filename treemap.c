@@ -174,25 +174,20 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-<<<<<<< HEAD
   TreeNode *auxiliar = malloc(sizeof(TreeNode));
   memcpy(auxiliar, tree->current, sizeof(TreeNode));
-=======
   TreeNode *auxiliar = tree->current;
->>>>>>> 88feaa6030c6ab222036520ade975e57b0e412e2
   if(tree->current->right != NULL)
   {
     tree->current = minimum(tree->current->right);
     return tree->current->pair;
   }
-<<<<<<< HEAD
   while(tree->current->parent != NULL && tree->current->parent->pair->key <= auxiliar->pair->key)
     tree->current = tree->current->parent;
   if(tree->current->parent == NULL)
     return NULL;
   else
     return tree->current->pair;
-=======
   while(tree->current->parent != NULL)
     {
       if(tree->current->parent->pair->key > auxiliar->pair->key)
@@ -200,5 +195,4 @@ Pair * nextTreeMap(TreeMap * tree) {
       tree->current = tree->current->parent;
     }
   return NULL;
->>>>>>> 88feaa6030c6ab222036520ade975e57b0e412e2
 }
