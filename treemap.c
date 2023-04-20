@@ -153,9 +153,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 Pair * upperBound(TreeMap * tree, void* key) {
    tree->current = tree->root;
    TreeNode *aux = NULL;
-  while(1)
+  while(tree->current != NULL)
     {
-    
+      
       if(is_equal(tree,tree->current->pair->key,key) == 1)
       {
         return tree->current->pair;
