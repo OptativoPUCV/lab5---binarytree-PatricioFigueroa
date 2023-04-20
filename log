@@ -356,3 +356,38 @@ treemap.c:186:41: error: expected ‘;’ before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 872f178
+Thu 20 Apr 2023 08:09:33 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:155:3: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  155 |   treeNode *auxiliar = tree->root;
+      |   ^~~~~~~~
+      |   TreeNode
+treemap.c:155:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  155 |   treeNode *auxiliar = tree->root;
+      |                        ^~~~
+treemap.c:163:16: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  163 |       if(key < minimun(tree->current->pair->key))
+      |                ^~~~~~~
+      |                minimum
+treemap.c:163:14: error: comparison between pointer and integer [-Werror]
+  163 |       if(key < minimun(tree->current->pair->key))
+      |              ^
+treemap.c:164:18: error: assignment to ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+  164 |         auxiliar = minimun(tree->current->pair->key);
+      |                  ^
+treemap.c:172:21: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘int *’ [-Werror=incompatible-pointer-types]
+  172 |       tree->current = auxiliar;
+      |                     ^
+treemap.c:173:22: error: request for member ‘pair’ in something not a structure or union
+  173 |       return auxiliar->pair;
+      |                      ^~
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:186:12: error: returning ‘int’ from a function with return type ‘Pair *’ makes pointer from integer without a cast [-Werror=int-conversion]
+  186 |     return minimun(tree->current->right);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+d6f1989
